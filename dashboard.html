@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Tracker Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <h1>Internship Tracker Dashboard</h1>
+            <button onclick="logout()" class="logout-btn">
+                Logout
+            </button>
+        </div>
+
+        <!-- Statistics -->
+
+        <div class="stats-container">
+
+            <div class="stat-card">
+                <h3>Total Applications</h3>
+                <p id="totalApps">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Applied</h3>
+                <p id="appliedCount">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Selected</h3>
+                <p id="selectedCount">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Rejected</h3>
+                <p id="rejectedCount">0</p>
+            </div>
+
+        </div>
+
+        <!-- Add Application -->
+
+        <div class="form-card">
+
+            <h2>Add / Update Application</h2>
+
+            <input
+                type="hidden"
+                id="editId">
+
+            <label>Company Name</label>
+            <input
+                type="text"
+                id="company"
+                placeholder="Google">
+
+            <label>Role</label>
+            <input
+                type="text"
+                id="role"
+                placeholder="Software Intern">
+
+            <label>Date Applied</label>
+            <input
+                type="date"
+                id="dateApplied">
+
+            <label>Interview Date</label>
+            <input
+                type="date"
+                id="interviewDate">
+
+            <label>Status</label>
+            <select id="status">
+
+                <option>Applied</option>
+                <option>OA Cleared</option>
+                <option>Interview Scheduled</option>
+                <option>Rejected</option>
+                <option>Selected</option>
+
+            </select>
+
+            <label>Notes</label>
+            <textarea
+                id="notes"
+                placeholder="Application details..."></textarea>
+
+            <label>Resume Upload</label>
+
+            <input
+                type="file"
+                id="resumeFile">
+
+            <button onclick="saveApplication()">
+                Save Application
+            </button>
+
+        </div>
+
+        <!-- Search -->
+
+        <div class="search-section">
+
+            <input
+                type="text"
+                id="searchBox"
+                placeholder="Search company..."
+                onkeyup="loadApplications()">
+
+        </div>
+
+        <!-- Applications Table -->
+
+        <div class="table-card">
+
+            <h2>Your Applications</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Company</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th>Applied</th>
+                        <th>Interview</th>
+                        <th>Resume</th>
+                        <th>Actions</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="applicationTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Internship Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <h1>Internship Tracker</h1>
+
+    <div>
+        <h2>Sign Up</h2>
+
+        <input type="email" id="signupEmail" placeholder="Enter Email">
+        <input type="password" id="signupPassword" placeholder="Enter Password">
+
+        <button onclick="signUp()">Sign Up</button>
+    </div>
+
+    <hr>
+
+    <div>
+        <h2>Login</h2>
+
+        <input type="email" id="loginEmail" placeholder="Enter Email">
+        <input type="password" id="loginPassword" placeholder="Enter Password">
+
+        <button onclick="login()">Login</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="js/auth.js"></script>
+
+</body>
+</html>
